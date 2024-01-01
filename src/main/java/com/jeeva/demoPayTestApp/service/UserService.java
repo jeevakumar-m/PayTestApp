@@ -1,7 +1,7 @@
-package com.jeeva.demopaytestapp.service;
+package com.jeeva.demoPayTestApp.service;
 
-import com.jeeva.demopaytestapp.model.User;
-import com.jeeva.demopaytestapp.repository.UserRepository;
+import com.jeeva.demoPayTestApp.model.User;
+import com.jeeva.demoPayTestApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

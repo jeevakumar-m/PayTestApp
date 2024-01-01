@@ -2,7 +2,6 @@ package com.jeeva.demoPayTestApp.controller;
 
 import com.jeeva.demoPayTestApp.model.Transaction;
 import com.jeeva.demoPayTestApp.model.TxnStatus;
-import com.jeeva.demoPayTestApp.repository.TransactionRepository;
 import com.jeeva.demoPayTestApp.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

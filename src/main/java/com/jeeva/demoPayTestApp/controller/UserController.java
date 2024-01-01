@@ -1,8 +1,8 @@
-package com.jeeva.demopaytestapp.controller;
+package com.jeeva.demoPayTestApp.controller;
 
 
-import com.jeeva.demopaytestapp.model.User;
-import com.jeeva.demopaytestapp.service.UserService;
+import com.jeeva.demoPayTestApp.model.User;
+import com.jeeva.demoPayTestApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

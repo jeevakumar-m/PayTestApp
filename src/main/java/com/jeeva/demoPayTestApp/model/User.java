@@ -1,9 +1,8 @@
 package com.jeeva.demopaytestapp.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.CurrentTimestamp;
 
 
 import java.util.Date;
@@ -13,6 +12,7 @@ import java.util.Date;
 public class User {
     @Id
     @Column
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     Integer id;
     @Column
     String firstName;
@@ -96,12 +96,15 @@ public class User {
     @Column
     Date dateOfBirth;
     @Column
+    @CreationTimestamp
     Date creationDate;
     @Column
+    @CurrentTimestamp
     Date updatedDate;
     @Column
     Date lastLoginDate;
     @Column
+
     String mobileNumber;
 
 }

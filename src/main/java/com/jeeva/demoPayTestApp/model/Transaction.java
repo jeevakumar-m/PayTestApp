@@ -1,6 +1,8 @@
 package com.jeeva.demoPayTestApp.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.CurrentTimestamp;
 
 import java.util.Date;
 
@@ -9,6 +11,7 @@ import java.util.Date;
 public class Transaction {
     @Column
     @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
     Integer transactionId;
     @Column
     Integer userId;
@@ -28,15 +31,17 @@ public class Transaction {
     @Column
 
     String destinationMobileNumber;
+    @CreationTimestamp
     @Column
 
     Date creationDate;
+    @CurrentTimestamp
     @Column
 
     Date updatedDate;
     @Column
-
-    boolean transactionStatus;
+    @Enumerated(EnumType.STRING)
+    TxnStatus transactionStatus;
 
     public Integer getTransactionId() {
         return transactionId;
@@ -118,11 +123,11 @@ public class Transaction {
         this.updatedDate = updatedDate;
     }
 
-    public boolean isTransactionStatus() {
+    public TxnStatus isTransactionStatus() {
         return transactionStatus;
     }
 
-    public void setTransactionStatus(boolean transactionStatus) {
+    public void setTransactionStatus(TxnStatus transactionStatus) {
         this.transactionStatus = transactionStatus;
     }
 

@@ -1,12 +1,15 @@
 package com.jeeva.demoPayTestApp.service;
 
 import com.jeeva.demoPayTestApp.model.Transaction;
+import com.jeeva.demoPayTestApp.model.TxnStatus;
 import com.jeeva.demoPayTestApp.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class TransactionService {
     @Autowired
     TransactionRepository transactionRepository;
@@ -42,11 +45,5 @@ public class TransactionService {
         transactionRepository.save(txn);
     }
 
-    public void softDeleteTransaction(Integer id)
-    {
-        Transaction txn = getTransaction(id);
-        txn.setTransactionStatus(false);
-        transactionRepository.save(txn);
-    }
 
 }

@@ -1,4 +1,4 @@
-package com.jeeva.demopaytestapp.model;
+package com.jeeva.demoPayTestApp.model;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -8,7 +8,7 @@ import org.hibernate.annotations.CurrentTimestamp;
 import java.util.Date;
 
 @Entity
-@Table
+@Table(name = "my_user_table")
 public class User {
     @Id
     @Column

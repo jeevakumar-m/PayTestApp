@@ -1,15 +1,19 @@
 package com.jeeva.demoPayTestApp.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.CurrentTimestamp;
+import org.hibernate.annotations.Formula;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 
 @Entity
 @Table
 public class Order {
+    @Id
     @Column
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Integer orderId;
     @Column
     Integer userId;
@@ -18,20 +22,24 @@ public class Order {
     @Column
     Integer productQuantity;
     @Column
-    double productPrice;
+    Integer productPrice;
     @Column
-    double taxOnProduct;
+    Integer taxOnProduct;
     @Column
-    double netPrice;
+    Integer netPrice;
     @Column
+    @Enumerated(EnumType.STRING)
     OrderStatus orderStatus;
     @Column
+    @CurrentTimestamp
     Date orderDate;
     @Column
     Date deliveryDate;
     @Column
+    @CreationTimestamp
     Date creationDate;
     @Column
+    @UpdateTimestamp
     Date updationDate;
 
 }

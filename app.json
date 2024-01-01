@@ -1,0 +1,40 @@
+{
+  "name": "Demo PayTest App",
+  "description": "Realtime payment app dbs",
+  "env": {
+    "SPRING_PROFILES_ACTIVE": "production",
+    "DATABASE_URL": {
+      "description": "JawsDB MySQL URL",
+      "value": "@jawsdb-mysql-url"
+    }
+  },
+  "addons": [
+    {
+      "plan": "jawsdb:kitefin",
+      "options": {
+        "version": "5.7"
+      }
+    }
+  ],
+  "scripts": {
+    "postdeploy": "echo Your post-deploy script commands here"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Standard-1X"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/java"
+    }
+  ],
+  "environments": {
+    "production": {
+      "addons": [
+        "@heroku/jawsdb-mysql"
+      ]
+    }
+  }
+}
